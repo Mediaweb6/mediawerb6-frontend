@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Lato:wght@400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Lato:wght@400&display=swap" rel="stylesheet">
 
 @keyframes gradient {
   0% {
@@ -44,6 +44,7 @@
 .animate-scroll-down {
   animation: scroll-down 50s linear infinite;
 }
+
 @keyframes slide-up {
   from {
     transform: translateY(10px);
@@ -58,6 +59,7 @@
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
+
 html,
 body {
   margin: 0;
@@ -107,6 +109,7 @@ body {
     }
   }
 }
+
 /* Animated neon card border */
 .neon-card-border {
   background: linear-gradient(135deg, #00ffff, #0066ff, #00ffff);
@@ -127,6 +130,7 @@ body {
   50% { opacity: 1; }
   100% { transform: translateX(120%); opacity: 0; }
 }
+
 .animate-shine {
   animation: shine 3s linear infinite;
 }
@@ -136,4 +140,3 @@ body {
   from { background-position: 0 0; }
   to { background-position: 80px 80px; }
 }
-
