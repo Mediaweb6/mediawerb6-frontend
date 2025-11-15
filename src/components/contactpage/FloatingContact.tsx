@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaWhatsapp, FaComments } from "react-icons/fa";
 const FloatingContact: React.FC = () => {
   const [open, setOpen] = useState(false);
 
-  const phoneNumber = "+918807202037"; // 👉 replace with your real phone number
+  const phoneNumber = "+919585602027"; // 👉 replace with your real phone number
   const contactName = "Media Web 6 Services"; // 👉 replace with your company name
 
   return (

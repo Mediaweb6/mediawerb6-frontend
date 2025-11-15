@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Lato:wght@400&display=swap" rel="stylesheet">
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -56,3 +58,82 @@
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #040c2e;
+  overflow-x: hidden;
+}
+
+/* Make sure the first section starts below fixed header */
+:root {
+  --card-height: 40vw;
+  --card-margin: 4vw;
+  --card-top-offset: 1em;
+  --numcards: 4;
+}
+
+/* Layout spacing for scroll stack */
+#cards {
+  padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+}
+
+/* Assign positions */
+.card {
+  position: sticky;
+  top: 0;
+  height: var(--card-height);
+  padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+/* Scroll-driven animation */
+@supports (animation-timeline: scroll()) {
+  @scroll-timeline stack-timeline {
+    source: auto;
+    orientation: block;
+  }
+
+  .card__content {
+    transform-origin: 50% 0%;
+    animation: scale-up linear both;
+    animation-timeline: stack-timeline;
+    animation-range: entry 0% exit 70%;
+  }
+
+  @keyframes scale-up {
+    to {
+      transform: scale(0.9);
+    }
+  }
+}
+/* Animated neon card border */
+.neon-card-border {
+  background: linear-gradient(135deg, #00ffff, #0066ff, #00ffff);
+  background-size: 300%;
+  animation: neonFlow 6s linear infinite;
+}
+
+/* Border flow */
+@keyframes neonFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Shine effect */
+@keyframes shine {
+  0% { transform: translateX(-120%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+.animate-shine {
+  animation: shine 3s linear infinite;
+}
+
+/* Moving grid background */
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 80px 80px; }
+}
+
